@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import {useHook} from "./components/useHook"
-const copyData = ref<string>('')
-const inputValue = ref<string>('')
-const {copyText} = useHook()
+import { ref,type Ref } from 'vue'
+import {useClip} from "./components/useHook"
+const inputValue: Ref<string> = ref('')
+const copyData: Ref<string> = ref('')
+
+const {copyText} = useClip()
 
 // function inputValueCopy(text: string): void {
 //   navigator.clipboard

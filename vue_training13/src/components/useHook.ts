@@ -1,9 +1,11 @@
+import { type Ref } from "vue"
+
 export function useClip(){
-    function copyText(text: string,copiedText:string): void {
+    function copyText(text:Ref<string>,copiedText:Ref<string>): void {
         navigator.clipboard
-          .writeText(text)
+          .writeText(text.value)
           .then(() => {
-            copiedText = text
+            copiedText.value = text.value
             alert('コピーしました。')
           })
           .catch(() => {

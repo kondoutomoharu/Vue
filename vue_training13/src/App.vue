@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import ChildComponent from './ChildComponent.vue'
-import {useHook} from './components/useHook.ts'
+import { useClip } from './components/useHook'
 
 const COPY_TEXT = 'https://google.com'
 
 const copyData = ref<string>('')
 
-const {copyText} = useHook()
+const {copyText} = useClip()
 
 // function urlCopy(text: string): void {
 //   navigator.clipboard
